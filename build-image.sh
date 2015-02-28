@@ -2,11 +2,11 @@
 ### Build a docker image for debian i386.
 
 ### settings
-arch=i386
+arch=armhf
 suite=jessie
 chroot_dir='/var/chroot/jessie'
 apt_mirror='http://http.debian.net/debian'
-docker_image='32bit/debian:jessie'
+docker_image='mikeholczer/debian:jessie'
 
 ### make sure that the required tools are installed
 apt-get install -y docker.io debootstrap dchroot
@@ -34,8 +34,8 @@ tar cfz debian.tgz -C $chroot_dir .
 cat debian.tgz | docker import - $docker_image
 
 # ### push image to Docker Hub
-# docker push $docker_image
+docker push $docker_image
 
 # ### cleanup
-# rm debian.tgz
-# rm -rf $chroot_dir
+rm debian.tgz
+rm -rf $chroot_dir
