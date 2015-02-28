@@ -1,4 +1,5 @@
 debian
 ======
 
-Debian i386 (32bit) image
+Debian armhf image
+for use by Docker on raspberry pi 2
