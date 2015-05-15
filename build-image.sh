@@ -40,6 +40,6 @@ cat debian.tgz | docker import - $docker_image
 # ### push image to Docker Hub
 # docker push $docker_image
 
-# ### cleanup
-# rm debian.tgz
-# rm -rf $chroot_dir
+### cleanup
+rm debian.tgz
+rm -rf $chroot_dir
