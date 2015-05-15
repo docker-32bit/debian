@@ -22,6 +22,10 @@ deb $apt_mirror $suite-updates main contrib non-free
 deb http://security.debian.org/ $suite/updates main contrib non-free
 EOF
 
+### upgrade packages
+chroot $chroot_dir apt-get update
+chroot $chroot_dir apt-get upgrade -y
+
 ### cleanup
 chroot $chroot_dir apt-get autoclean
 chroot $chroot_dir apt-get clean
