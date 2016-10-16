@@ -6,8 +6,7 @@ arch=armhf
 suite=${1:-jessie}
 chroot_dir="/var/chroot/$suite"
 apt_mirror="http://http.debian.net/debian"
-docker_image="32bit/debian:$suite"
-docker_image="mikeholczer/debian:$suite"
+docker_image="32bit/debian-armhf:$suite"
 
 ### make sure that the required tools are installed
 apt-get install -y docker.io debootstrap dchroot
